@@ -1,0 +1,24 @@
+name: Amnesia
+
+on: workflow_dispatch
+
+env:
+  NAME: Alex
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    env:
+      ENTREPRISE: Semifir
+    steps:
+      - name: 'Dit bonjour !'
+        run: echo "Salit $NAME ! Tu travailles chez $ENTREPRISE ? Alors bon $DAY à toi"
+        env:
+          DAY: Lundi
+      - name: "Lundi ?"
+        run: echo "On est quel jour ? $DAY ?"
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir !"
+        run: echo "Au revoir $NAME ! Tu travailles pour quelle entreprise ? $ENTREPRISE ?"
