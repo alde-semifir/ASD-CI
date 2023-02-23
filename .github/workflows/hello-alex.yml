@@ -4,13 +4,14 @@ on: workflow_dispatch
 
 env:
   NAME: Alex
+  AGE: 30
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
       - name: "Dit bonjour"
-        if: ${{env.NAME != 'Alex'}}
+        if: ${{env.NAME != 'Alex' || env.AGE != 18}}
         run: echo "Salut $NAME ! Ou est Alex ?!"
       - name: "Coucou Alex"
         if: ${{env.NAME == 'Alex'}}
