@@ -1,0 +1,12 @@
+name: Nouvelle issue !
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Issue ?"
+        run: echo 

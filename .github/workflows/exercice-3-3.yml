@@ -1,0 +1,15 @@
+name: "Workflow suivant"
+
+on:
+  workflow_run:
+    workflows:
+      - Merge PR
+    types:
+      - completed
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Validé !"
+        run: echo "Workflow Merge PR a été exécuté ! <3"
