@@ -1,0 +1,16 @@
+name: Frutz
+
+on: workflow_dispatch
+
+jobs:
+  furtz:
+    strategy:
+      fail-fast: true
+      matrix: 
+        fruits: [Pomme, Poire, Pêche, Cerise]
+        personnes: [Thomas, Marc, Adam, Kevin]
+    name: On aime les fuits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bon apétit !
+        run: echo "${{matrix.personnes}} mange un(e) ${{matrix.fruits}} et il est content !"
