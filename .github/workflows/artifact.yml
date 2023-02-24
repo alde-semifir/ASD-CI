@@ -1,0 +1,16 @@
+name: Upload Artifact
+
+on: workflow_dispatch
+
+jobs:
+  upload:
+    name: Upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Création du fichier
+        run: echo "Coucou bébou <3" > artifact.txt
+      - name: Upload de l'artéfact
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: artifact.txt
