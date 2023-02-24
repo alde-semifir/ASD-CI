@@ -14,3 +14,14 @@ jobs:
         with:
           name: artifact
           path: artifact.txt
+  download:
+    name: Download
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: dowload file
+        uses: actions/download-artifact@v3
+        with:
+          name: artifact
+      - name: read-file
+        run: cat artifact.txt
